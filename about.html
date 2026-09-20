@@ -1,0 +1,1660 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+        content="Learn about RPPS - Resource Project Planning System, an intelligent workforce utilization and project resource management platform.">
+
+    <title>About RPPS | Resource Project Planning System</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    <style>
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #212529;
+
+            background-color: #ffffff;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .rpps-navbar {
+
+            min-height: 72px;
+
+            background-color: #007ac1;
+
+            background-image:
+                linear-gradient(rgba(0, 122, 193, 0.90),
+                    rgba(0, 122, 193, 0.90)),
+                url("Images/header.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            padding: 0 25px;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .rpps-logo {
+
+            color: #ffffff !important;
+
+            font-size: 27px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-decoration: none;
+        }
+
+
+        .logo-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            line-height: 1.1;
+        }
+
+
+        .logo-title {
+
+            font-size: 27px;
+
+            font-weight: 700;
+        }
+
+
+        .logo-subtitle {
+
+            margin-top: 3px;
+
+            font-size: 9px;
+
+            font-weight: 400;
+
+            letter-spacing: 0.8px;
+
+            white-space: nowrap;
+        }
+
+
+        /* Navbar links */
+
+        .rpps-navbar .navbar-nav {
+
+            align-items: center;
+
+            gap: 5px;
+        }
+
+
+        .rpps-navbar .nav-link {
+
+            position: relative;
+
+            color: #ffffff !important;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            padding:
+                22px 13px !important;
+
+            transition:
+                background-color 0.3s ease;
+        }
+
+
+        .rpps-navbar .nav-link:hover {
+
+            background-color:
+                rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+        }
+
+
+        .rpps-navbar .nav-link.active {
+
+            background-color:
+                rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+        }
+
+
+        /* =========================================
+           PAGE HERO
+        ========================================= */
+
+        .about-hero {
+
+            min-height: 430px;
+
+            display: flex;
+
+            align-items: center;
+
+            background-color: #007ac1;
+
+            background-image:
+                linear-gradient(rgba(0, 122, 193, 0.88),
+                    rgba(0, 122, 193, 0.88)),
+                url("Images/header.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: #ffffff;
+        }
+
+
+        .about-hero-content {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .about-hero h1 {
+
+            font-size: 48px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-hero p {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color:
+                rgba(255, 255, 255, 0.92);
+
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================
+           COMMON SECTION
+        ========================================= */
+
+        .about-section {
+
+            padding: 75px 0;
+        }
+
+
+        .about-section-light {
+
+            background-color: #f8f9fa;
+        }
+
+
+        .section-title {
+
+            color: #007ac1;
+
+            font-size: 32px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-description {
+
+            color: #6c757d;
+
+            line-height: 1.7;
+
+            max-width: 750px;
+        }
+
+
+        /* =========================================
+           ABOUT INTRO
+        ========================================= */
+
+        .about-intro-text {
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            color: #495057;
+        }
+
+
+        .about-highlight {
+
+            border-left:
+                4px solid #007ac1;
+
+            padding-left: 20px;
+
+            margin-top: 25px;
+        }
+
+
+        .about-highlight strong {
+
+            color: #007ac1;
+        }
+
+
+        /* =========================================
+           PROBLEM CARDS
+        ========================================= */
+
+        .problem-card {
+
+            height: 100%;
+
+            padding: 30px;
+
+            background-color: #ffffff;
+
+            border:
+                1px solid #e3e7eb;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .problem-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.10);
+        }
+
+
+        .problem-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            background-color: #e9f6ff;
+
+            color: #007ac1;
+
+            font-size: 25px;
+        }
+
+
+        .problem-card h4 {
+
+            font-size: 19px;
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+        }
+
+
+        .problem-card p {
+
+            color: #6c757d;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================
+           HOW RPPS WORKS
+        ========================================= */
+
+        .workflow-step {
+
+            text-align: center;
+
+            position: relative;
+
+            padding: 20px;
+        }
+
+
+        .workflow-number {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background-color: #007ac1;
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            font-weight: 700;
+        }
+
+
+        .workflow-step h4 {
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .workflow-step p {
+
+            color: #6c757d;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           FEATURES
+        ========================================= */
+
+        .feature-card {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            height: 100%;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            background-color: #ffffff;
+
+            border:
+                1px solid #e3e7eb;
+        }
+
+
+        .feature-icon {
+
+            flex-shrink: 0;
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 8px;
+
+            background-color: #e9f6ff;
+
+            color: #007ac1;
+
+            font-size: 21px;
+        }
+
+
+        .feature-card h5 {
+
+            margin-bottom: 7px;
+
+            font-weight: 600;
+        }
+
+
+        .feature-card p {
+
+            margin: 0;
+
+            color: #6c757d;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           VISION
+        ========================================= */
+
+        .vision-section {
+
+            background-color: #007ac1;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+
+        .vision-section h2 {
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+
+        .vision-section p {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .site-footer {
+
+            background-color: #005f96;
+
+            color: #ffffff;
+
+            padding: 45px 0 20px;
+        }
+
+
+        .footer-title {
+
+            font-size: 18px;
+
+            margin-bottom: 18px;
+
+            font-weight: 600;
+        }
+
+
+        .footer-links {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+        }
+
+
+        .footer-links li {
+
+            margin-bottom: 9px;
+        }
+
+
+        .footer-links a {
+
+            color:
+                rgba(255, 255, 255, 0.82);
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #ffffff;
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.2);
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            font-size: 13px;
+
+            color:
+                rgba(255, 255, 255, 0.75);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 991px) {
+
+            .rpps-navbar {
+
+                padding: 8px 15px;
+            }
+
+
+            .rpps-navbar .navbar-nav {
+
+                align-items: stretch;
+            }
+
+
+            .rpps-navbar .nav-link {
+
+                padding:
+                    12px 15px !important;
+            }
+
+
+            .about-hero {
+
+                min-height: 350px;
+            }
+
+
+            .about-hero h1 {
+
+                font-size: 36px;
+            }
+
+        }
+
+
+        @media (max-width: 576px) {
+
+            .about-section {
+
+                padding: 50px 0;
+            }
+
+
+            .about-hero h1 {
+
+                font-size: 30px;
+            }
+
+
+            .about-hero p {
+
+                font-size: 15px;
+            }
+
+
+            .section-title {
+
+                font-size: 27px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg rpps-navbar">
+
+            <div class="container-fluid">
+
+
+                <!-- Logo -->
+
+                <a class="navbar-brand rpps-logo" href="index.html">
+
+                    <div class="logo-text">
+
+                        <span class="logo-title">
+                            RPPS
+                        </span>
+
+                        <span class="logo-subtitle">
+                            WorkForce Utilisation Framework
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Mobile button -->
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- Navigation -->
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="index.html">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link active" href="about.html">
+
+                                About
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+
+                                Services
+
+                            </a>
+
+
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Resource Allocation
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Workforce Management
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Project Assignment
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Project Forecasting
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Skill-Based Recommendations
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Product
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Pricing
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Careers
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Contact
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+     HERO
+====================================================== -->
+
+    <section class="about-hero">
+
+        <div class="container">
+
+            <div class="about-hero-content">
+
+                <h1>
+                    About RPPS
+                </h1>
+
+                <p>
+                    Resource Project Planning System is an intelligent
+                    workforce and project planning platform designed to
+                    connect people, skills and projects through
+                    structured resource planning and intelligent
+                    recommendations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     ABOUT RPPS
+====================================================== -->
+
+    <section class="about-section">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+
+                <!-- Content -->
+
+                <div class="col-lg-7">
+
+                    <h2 class="section-title">
+                        What is RPPS?
+                    </h2>
+
+                    <p class="about-intro-text">
+
+                        RPPS, or Resource Project Planning System,
+                        is designed to improve the way organizations
+                        manage workforce resources and project
+                        requirements.
+
+                    </p>
+
+
+                    <p class="about-intro-text">
+
+                        The platform brings together candidate skills,
+                        experience, project requirements and resource
+                        availability to support better project
+                        allocation and workforce utilization.
+
+                    </p>
+
+
+                    <p class="about-intro-text">
+
+                        Instead of treating resource allocation as a
+                        manual process, RPPS provides a structured
+                        approach for identifying suitable projects,
+                        managing available resources and supporting
+                        workforce development.
+
+                    </p>
+
+
+                    <div class="about-highlight">
+
+                        <strong>
+                            Our core objective:
+                        </strong>
+
+                        <p class="mb-0 mt-2">
+
+                            Connect the right skills with the right
+                            project requirements while improving
+                            workforce utilization and project efficiency.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="col-lg-5">
+                    <video src="video/Bench Utilization Explainer_720p_caption (online-video-cutter.com).mp4" style="width: 80%; height: auto; margin: 10px; padding: 0;" controls>
+                    </video>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     PROBLEM
+====================================================== -->
+
+    <section class="about-section about-section-light">
+
+        <div class="container">
+
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+                    The Problem We Address
+                </h2>
+
+                <p class="section-description mx-auto">
+
+                    Organizations often have skilled people,
+                    project requirements and available resources,
+                    but connecting these elements efficiently
+                    can be challenging.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Problem 1 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="problem-card">
+
+                        <div class="problem-icon">
+
+                            <i class="bi bi-people"></i>
+
+                        </div>
+
+                        <h4>
+                            Resource Availability
+                        </h4>
+
+                        <p>
+
+                            Identifying available resources and
+                            understanding their skills can become
+                            difficult when workforce information is
+                            distributed across systems.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Problem 2 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="problem-card">
+
+                        <div class="problem-icon">
+
+                            <i class="bi bi-person-x"></i>
+
+                        </div>
+
+                        <h4>
+                            Bench Management
+                        </h4>
+
+                        <p>
+
+                            Skilled employees may remain unassigned
+                            while suitable project opportunities
+                            exist within the organization.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Problem 3 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="problem-card">
+
+                        <div class="problem-icon">
+
+                            <i class="bi bi-diagram-3"></i>
+
+                        </div>
+
+                        <h4>
+                            Project Matching
+                        </h4>
+
+                        <p>
+
+                            Matching project requirements with
+                            candidate skills and experience can
+                            require significant manual effort.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Problem 4 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="problem-card">
+
+                        <div class="problem-icon">
+
+                            <i class="bi bi-graph-up"></i>
+
+                        </div>
+
+                        <h4>
+                            Workforce Planning
+                        </h4>
+
+                        <p>
+
+                            Organizations need better visibility
+                            into future project requirements and
+                            workforce capacity.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     HOW RPPS WORKS
+====================================================== -->
+
+    <section class="about-section">
+
+        <div class="container">
+
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+                    How RPPS Works
+                </h2>
+
+                <p class="section-description mx-auto">
+
+                    RPPS brings candidate information and project
+                    requirements together to support intelligent
+                    resource planning.
+
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Step 1 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            1
+                        </div>
+
+                        <h4>
+                            Skill Collection
+                        </h4>
+
+                        <p>
+
+                            Collect candidate skills,
+                            experience, tools and professional
+                            information.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Step 2 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            2
+                        </div>
+
+                        <h4>
+                            Project Analysis
+                        </h4>
+
+                        <p>
+
+                            Analyze project requirements,
+                            roles, technologies and required
+                            experience.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Step 3 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            3
+                        </div>
+
+                        <h4>
+                            Skill Matching
+                        </h4>
+
+                        <p>
+
+                            Compare candidate capabilities
+                            against project requirements.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Step 4 -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            4
+                        </div>
+
+                        <h4>
+                            Recommendation
+                        </h4>
+
+                        <p>
+
+                            Provide project recommendations
+                            based on the available information.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     CORE CAPABILITIES
+====================================================== -->
+
+    <section class="about-section about-section-light">
+
+        <div class="container">
+
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+                    RPPS Core Capabilities
+                </h2>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-person-workspace"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Project Assignment
+                            </h5>
+
+                            <p>
+                                Support structured allocation of
+                                resources to suitable project roles.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-bar-chart"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Resource Utilization
+                            </h5>
+
+                            <p>
+                                Improve visibility into how available
+                                workforce resources are being utilized.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Bench Management
+                            </h5>
+
+                            <p>
+                                Help identify potential opportunities
+                                for available resources.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-sliders"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Allocation Optimization
+                            </h5>
+
+                            <p>
+                                Support allocation decisions using
+                                structured matching and optimization.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Skill-Based Recommendation
+                            </h5>
+
+                            <p>
+                                Identify projects that align with
+                                candidate skills and experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Project Forecasting
+                            </h5>
+
+                            <p>
+                                Support planning by analyzing project
+                                and workforce requirements.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     VISION
+====================================================== -->
+
+    <section class="vision-section">
+
+        <div class="container">
+
+            <h2>
+                Our Vision
+            </h2>
+
+            <p>
+
+                RPPS aims to create a structured workforce planning
+                environment where skills, people and project
+                opportunities can be connected more effectively.
+                The platform focuses on improving resource visibility,
+                supporting project allocation and encouraging
+                continuous workforce development.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     FOOTER
+====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <!-- RPPS -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <h5 class="footer-title">
+                        RPPS
+                    </h5>
+
+                    <p>
+                        Resource Project Planning System for
+                        workforce utilization and project
+                        resource management.
+                    </p>
+
+                </div>
+
+
+                <!-- Services -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <h5 class="footer-title">
+                        Services
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="#">
+                                Resource Allocation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Workforce Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Project Assignment
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Project Forecasting
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Resources -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <h5 class="footer-title">
+                        Resources
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="about.html">
+                                About RPPS
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Documentation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                FAQs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Company -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <h5 class="footer-title">
+                        Company
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="#">
+                                Careers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Company Integration
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Privacy Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom text-center">
+
+                © 2026 RPPS - Resource Project Planning System.
+                All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>
+    Workforce Utilization & Resource Management | RPPS
+</title>
+
+
+<!-- Bootstrap CSS -->
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous">
+
+
+<!-- Bootstrap Icons -->
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+<style>
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+
+        margin: 0;
+
+        min-height: 100vh;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f8fbff,
+                #eef5ff
+            );
+
+        overflow: hidden;
+
+    }
+
+
+    /* =====================================================
+       LOADING SECTION
+    ===================================================== */
+
+    .loading-section {
+
+        min-height: 100vh;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 40px;
+
+    }
+
+
+    /* =====================================================
+       LOADING CARD
+    ===================================================== */
+
+    .loading-card {
+
+        width: 440px;
+
+        max-width: 100%;
+
+        padding: 45px 35px;
+
+        background:
+            rgba(255, 255, 255, 0.96);
+
+        border-radius: 24px;
+
+        text-align: center;
+
+        border:
+            1px solid
+            rgba(13, 110, 253, 0.08);
+
+        box-shadow:
+            0 20px 60px
+            rgba(0, 0, 0, 0.10);
+
+        animation:
+            cardAppear 0.8s ease;
+
+    }
+
+
+    /* =====================================================
+       RPPS LOGO
+    ===================================================== */
+
+    .rpps-logo {
+
+        width: 70px;
+
+        height: 70px;
+
+        margin:
+            0 auto 25px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #0d6efd,
+                #6610f2
+            );
+
+        color: white;
+
+        font-size: 22px;
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+
+        box-shadow:
+            0 12px 30px
+            rgba(13, 110, 253, 0.25);
+
+        animation:
+            logoPulse 2s infinite;
+
+    }
+
+
+    /* =====================================================
+       SPINNER
+    ===================================================== */
+
+    .spinner-container {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .spinner-border {
+
+        width: 4.5rem;
+
+        height: 4.5rem;
+
+        border-width: 0.35rem;
+
+    }
+
+
+    /* =====================================================
+       TITLE
+    ===================================================== */
+
+    .loading-title {
+
+        font-size: 25px;
+
+        font-weight: 700;
+
+        color: #212529;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .loading-message {
+
+        color: #6c757d;
+
+        min-height: 24px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    /* =====================================================
+       PROGRESS
+    ===================================================== */
+
+    .progress-container {
+
+        margin-top: 10px;
+
+    }
+
+
+    .progress {
+
+        height: 8px;
+
+        border-radius: 20px;
+
+        background:
+            #e9ecef;
+
+        overflow: hidden;
+
+    }
+
+
+    .progress-bar {
+
+        width: 0%;
+
+        border-radius: 20px;
+
+        transition:
+            width 0.4s ease;
+
+    }
+
+
+    .progress-value {
+
+        display: block;
+
+        margin-top: 8px;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        color: #6c757d;
+
+    }
+
+
+    /* =====================================================
+       LOADING ICONS
+    ===================================================== */
+
+    .loading-icons {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 30px;
+
+        margin-top: 32px;
+
+    }
+
+
+    .loading-icon {
+
+        width: 42px;
+
+        height: 42px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background:
+            #f1f5ff;
+
+        transition:
+            all 0.35s ease;
+
+    }
+
+
+    .loading-icon i {
+
+        font-size: 21px;
+
+        color: #0d6efd;
+
+        opacity: 0.35;
+
+        transition:
+            all 0.35s ease;
+
+    }
+
+
+    .loading-icon.active {
+
+        background:
+            #e7f1ff;
+
+        transform:
+            translateY(-5px);
+
+        box-shadow:
+            0 8px 18px
+            rgba(13, 110, 253, 0.15);
+
+    }
+
+
+    .loading-icon.active i {
+
+        opacity: 1;
+
+        transform:
+            scale(1.2);
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ===================================================== */
+
+    .status-text {
+
+        margin-top: 22px;
+
+        margin-bottom: 0;
+
+        font-size: 14px;
+
+        color: #6c757d;
+
+    }
+
+
+    /* =====================================================
+       FOOTER TEXT
+    ===================================================== */
+
+    .loading-footer {
+
+        margin-top: 25px;
+
+        padding-top: 18px;
+
+        border-top:
+            1px solid #eeeeee;
+
+        font-size: 12px;
+
+        color: #9aa0a6;
+
+    }
+
+
+    /* =====================================================
+       ANIMATIONS
+    ===================================================== */
+
+    @keyframes cardAppear {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px)
+                scale(0.97);
+
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+    }
+
+
+    @keyframes logoPulse {
+
+        0% {
+
+            transform:
+                scale(1);
+
+        }
+
+        50% {
+
+            transform:
+                scale(1.07);
+
+        }
+
+        100% {
+
+            transform:
+                scale(1);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 576px) {
+
+        body {
+
+            overflow-y: auto;
+
+        }
+
+        .loading-section {
+
+            padding: 20px;
+
+        }
+
+        .loading-card {
+
+            padding:
+                35px 22px;
+
+        }
+
+        .loading-title {
+
+            font-size: 22px;
+
+        }
+
+        .loading-icons {
+
+            gap: 16px;
+
+        }
+
+        .loading-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =====================================================
+     RPPS LOADING PAGE
+====================================================== -->
+
+<section class="loading-section">
+
+
+    <div class="loading-card">
+
+
+        <!-- RPPS LOGO -->
+
+        <div class="rpps-logo">
+
+            RPPS
+
+        </div>
+
+
+        <!-- SPINNER -->
+
+        <div class="spinner-container">
+
+            <div
+                class="spinner-border text-primary"
+                role="status">
+
+                <span class="visually-hidden">
+
+                    Loading...
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1 class="loading-title">
+
+            Project Loading...
+
+        </h1>
+
+
+        <!-- DYNAMIC MESSAGE -->
+
+        <p
+            id="loadingMessage"
+            class="loading-message">
+
+            Initializing RPPS Workforce Planning System...
+
+        </p>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-container">
+
+            <div class="progress">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0">
+
+                </div>
+
+            </div>
+
+            <span
+                id="progressValue"
+                class="progress-value">
+
+                0%
+
+            </span>
+
+        </div>
+
+
+        <!-- PROCESS ICONS -->
+
+        <div class="loading-icons">
+
+
+            <!-- Workforce -->
+
+            <div
+                class="loading-icon active"
+                id="iconWorkforce"
+                title="Workforce">
+
+                <i
+                    class="bi bi-people-fill">
+                </i>
+
+            </div>
+
+
+            <!-- Projects -->
+
+            <div
+                class="loading-icon"
+                id="iconProjects"
+                title="Projects">
+
+                <i
+                    class="bi bi-kanban-fill">
+                </i>
+
+            </div>
+
+
+            <!-- AI -->
+
+            <div
+                class="loading-icon"
+                id="iconAI"
+                title="AI Recommendation">
+
+                <i
+                    class="bi bi-cpu-fill">
+                </i>
+
+            </div>
+
+
+            <!-- Analytics -->
+
+            <div
+                class="loading-icon"
+                id="iconAnalytics"
+                title="Analytics">
+
+                <i
+                    class="bi bi-bar-chart-fill">
+                </i>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <p
+            id="statusText"
+            class="status-text">
+
+            Preparing workforce data...
+
+        </p>
+
+
+        <!-- FOOTER -->
+
+        <div class="loading-footer">
+
+            Resource Project Planning System
+
+            <br>
+
+            Enhancing Workforce Utilisation and
+            Project Efficiency through Intelligent Planning
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    /*
+    -------------------------------------------------------
+    RPPS LOADING PROCESS
+    -------------------------------------------------------
+    */
+
+    const loadingSteps = [
+
+        {
+            progress: 15,
+            message:
+                "Loading workforce information...",
+            status:
+                "Preparing workforce data...",
+            icon:
+                "iconWorkforce"
+        },
+
+        {
+            progress: 35,
+            message:
+                "Loading project requirements...",
+            status:
+                "Preparing project information...",
+            icon:
+                "iconProjects"
+        },
+
+        {
+            progress: 60,
+            message:
+                "Analysing candidate skills...",
+            status:
+                "Running skill analysis...",
+            icon:
+                "iconAI"
+        },
+
+        {
+            progress: 80,
+            message:
+                "Generating project recommendations...",
+            status:
+                "Calculating candidate-project compatibility...",
+            icon:
+                "iconAI"
+        },
+
+        {
+            progress: 95,
+            message:
+                "Preparing analytics dashboard...",
+            status:
+                "Preparing workforce analytics...",
+            icon:
+                "iconAnalytics"
+        },
+
+        {
+            progress: 100,
+            message:
+                "RPPS is ready.",
+            status:
+                "Loading completed...",
+            icon:
+                "iconAnalytics"
+        }
+
+    ];
+
+
+    let currentStep = 0;
+
+
+    const progressBar =
+        document.getElementById(
+            "progressBar"
+        );
+
+
+    const progressValue =
+        document.getElementById(
+            "progressValue"
+        );
+
+
+    const loadingMessage =
+        document.getElementById(
+            "loadingMessage"
+        );
+
+
+    const statusText =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    function updateLoading() {
+
+
+        if (
+            currentStep >=
+            loadingSteps.length
+        ) {
+
+            return;
+
+        }
+
+
+        const step =
+            loadingSteps[currentStep];
+
+
+        /*
+        Update progress
+        */
+
+        progressBar.style.width =
+            step.progress + "%";
+
+
+        progressBar.setAttribute(
+            "aria-valuenow",
+            step.progress
+        );
+
+
+        progressValue.textContent =
+            step.progress + "%";
+
+
+        /*
+        Update messages
+        */
+
+        loadingMessage.textContent =
+            step.message;
+
+
+        statusText.textContent =
+            step.status;
+
+
+        /*
+        Update icons
+        */
+
+        document
+            .querySelectorAll(
+                ".loading-icon"
+            )
+            .forEach(
+                icon => {
+
+                    icon.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+        const activeIcon =
+            document.getElementById(
+                step.icon
+            );
+
+
+        if (activeIcon) {
+
+            activeIcon.classList.add(
+                "active"
+            );
+
+        }
+
+
+        currentStep++;
+
+
+        /*
+        Redirect after completion
+        */
+
+        if (
+            step.progress === 100
+        ) {
+
+            setTimeout(
+                () => {
+
+                    /*
+                    Change this to your
+                    actual RPPS homepage.
+
+                    Example:
+
+                    window.location.href =
+                    "index.html";
+
+                    */
+
+                    window.location.href =
+                        "index.html";
+
+                },
+
+                1200
+
+            );
+
+        }
+
+    }
+
+
+    /*
+    Start loading
+    */
+
+    updateLoading();
+
+
+    /*
+    Continue loading
+    */
+
+    const loadingInterval =
+        setInterval(
+            () => {
+
+                if (
+                    currentStep >=
+                    loadingSteps.length
+                ) {
+
+                    clearInterval(
+                        loadingInterval
+                    );
+
+                    return;
+
+                }
+
+                updateLoading();
+
+            },
+
+            900
+
+        );
+
+</script>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1733 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+        content="RPPS - Resource Project Planning System for workforce utilization, resource management, project allocation and intelligent workforce planning.">
+
+    <title>Workforce Utilization & Resource Management | RPPS</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom CSS -->
+    <!-- <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .site-header {
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .rpps-navbar {
+            min-height: 72px;
+
+            background-color: #007ac1;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 122, 193, 0.88),
+                    rgba(0, 122, 193, 0.88)
+                ),
+                url("Images/header.png");
+
+            background-size: cover;
+            background-position: center;
+
+            padding: 0 25px;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .rpps-logo {
+            display: flex;
+            align-items: center;
+
+            color: #ffffff !important;
+
+            font-size: 27px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-decoration: none;
+
+            padding: 10px 0;
+        }
+
+        .rpps-logo:hover {
+            color: #eaf7ff !important;
+        }
+
+
+        /* =========================================
+           NAVIGATION LINKS
+        ========================================= */
+
+        .rpps-navbar .navbar-nav {
+            align-items: center;
+            gap: 5px;
+        }
+
+        .rpps-navbar .nav-link {
+            position: relative;
+
+            color: #ffffff !important;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            padding: 22px 13px !important;
+
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+
+        /* Hover background */
+
+        .rpps-navbar .nav-link:hover {
+            color: #ffffff !important;
+
+            background-color: rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+        }
+
+
+        /* Bottom hover line */
+
+        .rpps-navbar .nav-link::after {
+            content: "";
+
+            position: absolute;
+
+            left: 12px;
+            right: 12px;
+            bottom: 8px;
+
+            height: 2px;
+
+            background-color: #ffffff;
+
+            transform: scaleX(0);
+
+            transform-origin: center;
+
+            transition: transform 0.3s ease;
+        }
+
+        .rpps-navbar .nav-link:hover::after,
+        .rpps-navbar .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+
+        /* =========================================
+           SERVICES DROPDOWN
+        ========================================= */
+
+        .services-dropdown {
+            min-width: 270px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding: 8px;
+
+            margin-top: 5px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .services-dropdown .dropdown-item {
+            padding: 11px 14px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            transition:
+                background-color 0.2s ease,
+                padding-left 0.2s ease;
+        }
+
+        .services-dropdown .dropdown-item:hover {
+            background-color: #e9f6ff;
+
+            color: #007ac1;
+
+            padding-left: 20px;
+        }
+
+        .services-dropdown .dropdown-item i {
+            width: 25px;
+
+            color: #007ac1;
+        }
+
+
+        /* =========================================
+           NOTIFICATION
+        ========================================= */
+
+        .notification-link {
+            position: relative;
+
+            display: flex !important;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .notification-icon {
+            font-size: 20px;
+        }
+
+        .notification-badge {
+            position: absolute;
+
+            top: 12px;
+            right: 7px;
+
+            min-width: 17px;
+            height: 17px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background-color: #dc3545;
+
+            color: #ffffff;
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+
+        /* =========================================
+           USER PROFILE
+        ========================================= */
+
+        .profile-link {
+            display: flex !important;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .profile-image {
+            width: 36px;
+            height: 36px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 2px solid #ffffff;
+        }
+
+        .profile-name {
+            color: #ffffff;
+        }
+
+        .profile-dropdown {
+            min-width: 220px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding: 8px;
+
+            margin-top: 5px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-dropdown .dropdown-item {
+            padding: 10px 13px;
+
+            border-radius: 6px;
+        }
+
+        .profile-dropdown .dropdown-item:hover {
+            background-color: #e9f6ff;
+
+            color: #007ac1;
+        }
+
+        .profile-dropdown .dropdown-item i {
+            width: 25px;
+        }
+
+        .profile-header {
+            padding: 12px;
+
+            border-bottom: 1px solid #eeeeee;
+
+            margin-bottom: 5px;
+        }
+
+        .profile-header img {
+            width: 45px;
+            height: 45px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+
+
+        /* =========================================
+           BANNER
+        ========================================= */
+
+        .site-banner {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .site-banner img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            min-height: 300px;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .site-content {
+            min-height: 400px;
+
+            padding: 50px 30px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .site-footer {
+            min-height: 100px;
+
+            background-color: #007ac1;
+
+            color: #ffffff;
+
+            padding: 30px;
+        }
+
+
+        /* =========================================
+           MOBILE NAVBAR
+        ========================================= */
+
+        @media (max-width: 991px) {
+
+            .rpps-navbar {
+                padding: 8px 15px;
+            }
+
+            .rpps-navbar .navbar-nav {
+                align-items: stretch;
+
+                gap: 0;
+
+                padding-top: 10px;
+            }
+
+            .rpps-navbar .nav-link {
+                padding: 12px 15px !important;
+            }
+
+            .rpps-navbar .nav-link::after {
+                display: none;
+            }
+
+            .rpps-navbar .nav-link:hover {
+                border-radius: 5px;
+            }
+
+            .notification-link {
+                justify-content: flex-start;
+            }
+
+            .notification-badge {
+                position: static;
+
+                margin-left: 5px;
+            }
+
+            .profile-link {
+                justify-content: flex-start;
+            }
+
+            .services-dropdown,
+            .profile-dropdown {
+                box-shadow: none;
+
+                border-radius: 5px;
+
+                margin-top: 0;
+            }
+        }
+
+    </style> -->
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header" id="header">
+
+        <nav class="navbar navbar-expand-lg rpps-navbar">
+
+            <div class="container-fluid">
+
+
+                <!-- =====================================
+                     RPPS LOGO
+                ====================================== -->
+
+                <a class="navbar-brand rpps-logo" href="#">
+                    <div class="logo-text"> <span class="logo-title">RPPS</span> <span class="logo-subtitle">WorkForce
+                            Utilisation Framework</span> </div>
+                </a>
+
+                <!-- =====================================
+                     MOBILE MENU BUTTON
+                ====================================== -->
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- =====================================
+                     NAVIGATION
+                ====================================== -->
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <!-- ms-auto keeps all navigation items RIGHT -->
+
+                    <ul class="navbar-nav ms-auto">
+
+
+                        <!-- Exam Module -->
+
+
+                        <!-- ABOUT -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="./about.html">
+
+                                About
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             SERVICES DROPDOWN
+                        ================================== -->
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
+                                Services
+
+                            </a>
+
+
+                            <ul class="dropdown-menu services-dropdown">
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-workspace"></i>
+                                        Resource Allocation
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-people-fill"></i>
+                                        Workforce Management
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-kanban-fill"></i>
+                                        Project Assignment
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-bar-chart-fill"></i>
+                                        Resource Utilization
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-lines-fill"></i>
+                                        Bench Management
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-diagram-3-fill"></i>
+                                        Allocation Optimization
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                        Project Forecasting
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-mortarboard-fill"></i>
+                                        Employee Upskilling
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-stars"></i>
+                                        Skill-Based Recommendations
+                                    </a>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+
+
+                        <!-- PRODUCT -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Product
+
+                            </a>
+
+                        </li>
+
+
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
+                                Certification
+
+                            </a>
+
+
+                            <ul class="dropdown-menu services-dropdown">
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-workspace"></i>
+                                        Resource Allocation
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-people-fill"></i>
+                                        Workforce Management
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-kanban-fill"></i>
+                                        Project Assignment
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-bar-chart-fill"></i>
+                                        Resource Utilization
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-lines-fill"></i>
+                                        Bench Management
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-diagram-3-fill"></i>
+                                        Allocation Optimization
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                        Project Forecasting
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-mortarboard-fill"></i>
+                                        Employee Upskilling
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-stars"></i>
+                                        Skill-Based Recommendations
+                                    </a>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Help Center
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
+                                Career Guidance
+
+                            </a>
+
+
+                            <ul class="dropdown-menu services-dropdown">
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-workspace"></i>
+                                        Resource Allocation
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-people-fill"></i>
+                                        Workforce Management
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-kanban-fill"></i>
+                                        Project Assignment
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-bar-chart-fill"></i>
+                                        Resource Utilization
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-lines-fill"></i>
+                                        Bench Management
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-diagram-3-fill"></i>
+                                        Allocation Optimization
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                        Project Forecasting
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-mortarboard-fill"></i>
+                                        Employee Upskilling
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-stars"></i>
+                                        Skill-Based Recommendations
+                                    </a>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+
+
+
+                        <!-- SIGN IN / SIGN UP -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="#">
+
+                                Sign In / Sign Up
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             NOTIFICATION
+                        ================================== -->
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link notification-link" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Notifications">
+
+                                <i class="bi bi-bell-fill notification-icon"></i>
+
+                                <span class="notification-badge">
+                                    3
+                                </span>
+
+                            </a>
+
+
+                            <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+
+                                <li class="dropdown-header">
+                                    Notifications
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-info-circle me-2"></i>
+                                        New project recommendation
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-check me-2"></i>
+                                        Profile verification completed
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-briefcase me-2"></i>
+                                        New project assigned
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item text-primary" href="#">
+                                        View all notifications
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <!-- =================================
+                             USER PROFILE
+                        ================================== -->
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle profile-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+
+
+                                <!-- User Image -->
+
+                                <img src="Images/user-profile.jpg" alt="User Profile" class="profile-image">
+
+
+                                <span class="profile-name">
+                                    User
+                                </span>
+
+
+                            </a>
+
+
+                            <!-- Profile Dropdown -->
+
+                            <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+
+
+                                <!-- Profile Header -->
+
+                                <li>
+
+                                    <div class="profile-header d-flex align-items-center gap-3">
+
+                                        <img src="Images/user-profile.jpg" alt="User Profile">
+
+                                        <div>
+
+                                            <strong>User Name</strong>
+
+                                            <small class="d-block text-muted">
+                                                user@example.com
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+
+                                <!-- Profile -->
+
+                                <li>
+
+                                    <a class="dropdown-item" href="#">
+
+                                        <i class="bi bi-person-circle"></i>
+
+                                        My Profile
+
+                                    </a>
+
+                                </li>
+
+
+                                <!-- Dashboard -->
+
+                                <li>
+
+                                    <a class="dropdown-item" href="#">
+
+                                        <i class="bi bi-speedometer2"></i>
+
+                                        Dashboard
+
+                                    </a>
+
+                                </li>
+
+
+                                <!-- Projects -->
+
+                                <li>
+
+                                    <a class="dropdown-item" href="#">
+
+                                        <i class="bi bi-kanban"></i>
+
+                                        My Projects
+
+                                    </a>
+
+                                </li>
+
+
+                                <!-- Settings -->
+
+                                <li>
+
+                                    <a class="dropdown-item" href="#">
+
+                                        <i class="bi bi-gear"></i>
+
+                                        Account Settings
+
+                                    </a>
+
+                                </li>
+
+
+                                <!-- Documents -->
+
+                                <li>
+
+                                    <a class="dropdown-item" href="#">
+
+                                        <i class="bi bi-file-earmark-text"></i>
+
+                                        Documents
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+
+                                <!-- Logout -->
+
+                                <li>
+
+                                    <a class="dropdown-item text-danger" href="#">
+
+                                        <i class="bi bi-box-arrow-right"></i>
+
+                                        Logout
+
+                                    </a>
+
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="site-main" id="main">
+
+
+        <!-- =====================================
+             BANNER
+        ====================================== -->
+
+        <section class="site-banner" id="site-banner">
+
+            <img src="Images/Banner_Image.png" alt="RPPS Workforce Resource Planning Banner">
+
+        </section>
+        <!-- =====================================
+             CONTENT
+        ====================================== -->
+        <section class="site-content" id="site-content">
+
+            <!-- Main content goes here -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center ">
+                        <h1 class="Heading1">Welcome to RPPS</h1>
+                        <p>RPPS is a comprehensive Resource Project Planning System designed to optimize workforce
+                            utilization, resource allocation, and project efficiency. Our platform provides intelligent
+                            tools for managing resources, assigning projects, and forecasting future needs.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-person-workspace" style="font-size: 2rem;"></i>
+                        <h3>Resource Allocation</h3>
+                        <p>Efficiently allocate resources to projects based on skills, availability, and project
+                            requirements.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-people-fill" style="font-size: 2rem;"></i>
+                        <h3>Workforce Management</h3>
+                        <p>Manage your workforce effectively with tools for scheduling, tracking, and performance
+                            evaluation.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-kanban-fill" style="font-size: 2rem;"></i>
+                        <h3>Project Assignment</h3>
+                        <p>Assign projects to the right team members based on their skills and availability.</p>
+                    </div>
+
+                    <section class="rpps-recommendation-section py-5">
+                        <div class="container"> <!-- Section Heading -->
+                            <div class="row mb-4">
+                                <div class="col-12 text-center">
+                                    <h2 class="rpps-section-title"> Find the Right Project for Your Skills </h2>
+                                    <p class="rpps-section-description"> Upload your resume or enter your skills to get
+                                        personalized project recommendations. </p>
+                                </div>
+                            </div> <!-- Recommendation Form -->
+                            <form action="/recommend/" method="POST" enctype="multipart/form-data">
+                                <!-- CSRF token if using Django --> <!-- {% csrf_token %} -->
+                                <div class="row g-4">
+                                    <!-- ========================================= COLUMN 1 - RESUME UPLOAD ========================================== -->
+                                    <div class="col-md-6">
+                                        <div class="rpps-input-card">
+                                            <div class="rpps-card-icon"> <i class="bi bi-file-earmark-person"></i>
+                                            </div>
+                                            <h4> Upload Your Resume </h4>
+                                            <p class="text-muted"> Upload your resume and RPPS will extract your skills,
+                                                experience and technologies. </p>
+                                            <div class="mb-3"> <label for="resume" class="form-label fw-semibold">
+                                                    Resume </label> <input type="file" class="form-control" id="resume"
+                                                    name="resume" accept=".pdf,.doc,.docx" required>
+                                                <div class="form-text"> Supported formats: PDF, DOC, DOCX, Pages </div>
+                                            </div> <!-- Resume Upload Button --> <button type="submit" name="input_type"
+                                                value="resume" class="btn btn-primary rpps-submit-btn"> <i
+                                                    class="bi bi-upload me-2"></i> Upload & Find Projects </button>
+                                        </div>
+                                    </div>
+                                    <!-- ========================================= COLUMN 2 - SKILL SEARCH ========================================== -->
+                                    <div class="col-md-6">
+                                        <div class="rpps-input-card">
+                                            <div class="rpps-card-icon"> <i class="bi bi-search"></i> </div>
+                                            <h4> Enter Your Skills </h4>
+                                            <p class="text-muted"> Enter your skills, technologies or areas of expertise
+                                                to find matching projects. </p>
+                                            <div class="mb-3"> <label for="skills" class="form-label fw-semibold"> Skill
+                                                    Set </label> <input type="text" class="form-control" id="skills"
+                                                    name="skills" placeholder="e.g. Python, Django, SQL, AWS"
+                                                    autocomplete="off" required>
+                                                <div class="form-text"> Separate multiple skills with commas. </div>
+                                            </div> <!-- Search Button --> <button type="submit" name="input_type"
+                                                value="skills" class="btn btn-primary rpps-submit-btn"> <i
+                                                    class="bi bi-search me-2"></i> Find Recommended Projects </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                </div>
+        </section>
+
+        <section class="site-reccomandation" id="reccomanded-project">
+
+            <div id="reccomanded-projects" class="container text-center">
+
+                <h1 class="Heading1">Recommended Projects</h1>
+                <p>Click any project to open its project workspace.</p>
+
+                <div class="row g-4">
+
+                    <div class="row g-4">
+
+                        <!-- Project 1 -->
+                        <div class="col-md-4 d-flex">
+                            <div class="card shadow-sm w-100 project-card">
+
+                                <div class="card-body d-flex flex-column">
+
+                                    <h5 class="card-title">Technical Documentation</h5>
+
+                                    <p class="card-text">
+                                        Create technical manuals, process documents and structured project reports.
+                                    </p>
+
+                                    <div class="task-description">
+                                        <span class="skill-tag">Technical Writing</span>
+                                        <span class="skill-tag">Documentation</span>
+                                        <span class="skill-tag">MS Word</span>
+                                    </div>
+
+                                    <div class="project-info">
+                                        <p><strong>Task Status:</strong> In Progress</p>
+                                        <p><strong>Task Type:</strong> Daily</p>
+                                        <p><strong>Team Mates:</strong> N1, N2, N3</p>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100">
+                                            Open Workspace
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Project 2 -->
+                        <div class="col-md-4 d-flex">
+                            <div class="card shadow-sm w-100 project-card">
+
+                                <div class="card-body d-flex flex-column">
+
+                                    <h5 class="card-title">Web Application Development</h5>
+
+                                    <p class="card-text">
+                                        Develop a responsive web application for managing projects and workforce
+                                        resources.
+                                    </p>
+
+                                    <div class="task-description">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Django</span>
+                                        <span class="skill-tag">Bootstrap</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                    </div>
+
+                                    <div class="project-info">
+                                        <p><strong>Task Status:</strong> In Progress</p>
+                                        <p><strong>Task Type:</strong> Weekly</p>
+                                        <p><strong>Team Mates:</strong> N4, N5, N6</p>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100">
+                                            Open Workspace
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Project 3 -->
+                        <div class="col-md-4 d-flex">
+                            <div class="card shadow-sm w-100 project-card">
+
+                                <div class="card-body d-flex flex-column">
+
+                                    <h5 class="card-title">Data Analytics Dashboard</h5>
+
+                                    <p class="card-text">
+                                        Build an analytics dashboard to monitor workforce utilization and project
+                                        performance.
+                                    </p>
+
+                                    <div class="task-description">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Pandas</span>
+                                        <span class="skill-tag">Power BI</span>
+                                        <span class="skill-tag">SQL</span>
+                                    </div>
+
+                                    <div class="project-info">
+                                        <p><strong>Task Status:</strong> Started</p>
+                                        <p><strong>Task Type:</strong> Daily</p>
+                                        <p><strong>Team Mates:</strong> N7, N8, N9</p>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100">
+                                            Open Workspace
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Project 4 -->
+                        <div class="col-md-4 d-flex">
+                            <div class="card shadow-sm w-100 project-card">
+
+                                <div class="card-body d-flex flex-column">
+
+                                    <h5 class="card-title">AI Recommendation System</h5>
+
+                                    <p class="card-text">
+                                        Develop an intelligent recommendation engine for matching candidates with
+                                        suitable projects.
+                                    </p>
+
+                                    <div class="task-description">
+                                        <span class="skill-tag">Machine Learning</span>
+                                        <span class="skill-tag">Scikit-learn</span>
+                                        <span class="skill-tag">TF-IDF</span>
+                                        <span class="skill-tag">Cosine Similarity</span>
+                                    </div>
+
+                                    <div class="project-info">
+                                        <p><strong>Task Status:</strong> In Progress</p>
+                                        <p><strong>Task Type:</strong> Monthly</p>
+                                        <p><strong>Team Mates:</strong> N10, N11, N12</p>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100">
+                                            Open Workspace
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Project 5 -->
+                        <div class="col-md-4 d-flex">
+                            <div class="card shadow-sm w-100 project-card">
+
+                                <div class="card-body d-flex flex-column">
+
+                                    <h5 class="card-title">Resource Allocation Optimization</h5>
+
+                                    <p class="card-text">
+                                        Optimize workforce allocation by matching candidate skills and project
+                                        requirements.
+                                    </p>
+
+                                    <div class="task-description">
+                                        <span class="skill-tag">Optimization</span>
+                                        <span class="skill-tag">K-Means</span>
+                                        <span class="skill-tag">Hungarian Algorithm</span>
+                                        <span class="skill-tag">Python</span>
+                                    </div>
+
+                                    <div class="project-info">
+                                        <p><strong>Task Status:</strong> Pending Review</p>
+                                        <p><strong>Task Type:</strong> Weekly</p>
+                                        <p><strong>Team Mates:</strong> N13, N14, N15</p>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100">
+                                            Open Workspace
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Project 6 -->
+                        <div class="col-md-4 d-flex">
+                            <div class="card shadow-sm w-100 project-card">
+
+                                <div class="card-body d-flex flex-column">
+
+                                    <h5 class="card-title">Project Forecasting & Analytics</h5>
+
+                                    <p class="card-text">
+                                        Forecast project workload, resource requirements and future workforce demand.
+                                    </p>
+
+                                    <div class="task-description">
+                                        <span class="skill-tag">ARIMA</span>
+                                        <span class="skill-tag">Forecasting</span>
+                                        <span class="skill-tag">Statistics</span>
+                                        <span class="skill-tag">Python</span>
+                                    </div>
+
+                                    <div class="project-info">
+                                        <p><strong>Task Status:</strong> Not Started</p>
+                                        <p><strong>Task Type:</strong> Yearly</p>
+                                        <p><strong>Team Mates:</strong> N16, N17, N18</p>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100">
+                                            Open Workspace
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Customers & Strategic Partners Section -->
+        <section class="customer-partner-section">
+            <div class="container">
+                <div class="row g-4"> <!-- Happy Customers Carousel -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="carousel-box">
+                            <div class="carousel-heading">
+                                <h2>Happy Customers</h2>
+                                <p>Organizations and professionals using RPPS.</p>
+                            </div>
+                            <div id="happyCustomersCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="customer-card"> <img src="images/customer.png" alt="Customer 1"
+                                                class="customer-logo">
+                                            <h5>Customer 1</h5>
+                                            <p> "RPPS helped us improve resource utilization and project allocation."
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="customer-card"> <img src="images/customer.png" alt="Customer 2"
+                                                class="customer-logo">
+                                            <h5>Customer 2</h5>
+                                            <p> "The skill-based recommendation system made project allocation easier."
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="customer-card"> <img src="images/customer.png" alt="Customer 3"
+                                                class="customer-logo">
+                                            <h5>Customer 3</h5>
+                                            <p> "RPPS provides a structured approach to workforce planning." </p>
+                                        </div>
+                                    </div>
+                                </div> <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#happyCustomersCarousel" data-bs-slide="prev"> <span
+                                        class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+                                        class="visually-hidden"> Previous </span> </button> <button
+                                    class="carousel-control-next" type="button" data-bs-target="#happyCustomersCarousel"
+                                    data-bs-slide="next"> <span class="carousel-control-next-icon"
+                                        aria-hidden="true"></span> <span class="visually-hidden"> Next </span> </button>
+                            </div>
+                        </div>
+                    </div> <!-- Strategic Partners Carousel -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="carousel-box">
+                            <div class="carousel-heading">
+                                <h2>Strategic Partners</h2>
+                                <p>Our ecosystem of technology and business partners.</p>
+                            </div>
+                            <div id="strategicPartnersCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="partner-card"> <img src="images/partner.png"
+                                                alt="Strategic Partner 1" class="partner-logo">
+                                            <h5>Partner 1</h5>
+                                            <p> Technology & Digital Transformation </p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="partner-card"> <img src="images/partner.png"
+                                                alt="Strategic Partner 2" class="partner-logo">
+                                            <h5>Partner 2</h5>
+                                            <p> Cloud & Infrastructure </p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="partner-card"> <img src="images/partner.png"
+                                                alt="Strategic Partner 3" class="partner-logo">
+                                            <h5>Partner 3</h5>
+                                            <p> Workforce & Business Solutions </p>
+                                        </div>
+                                    </div>
+                                </div> <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#strategicPartnersCarousel" data-bs-slide="prev"> <span
+                                        class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+                                        class="visually-hidden"> Previous </span> </button> <button
+                                    class="carousel-control-next" type="button"
+                                    data-bs-target="#strategicPartnersCarousel" data-bs-slide="next"> <span
+                                        class="carousel-control-next-icon" aria-hidden="true"></span> <span
+                                        class="visually-hidden"> Next </span> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+
+            <div style="margin: 3%; padding: 2px; text-align: center; background-color: #f8f9fa; ">
+                <h1 class="container text-center rpps-section-title">RPPS FAQ </h1>
+            </div>
+
+            <div style="padding: 10px; margin:50px;">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                How does RPPS decide which employee or candidate is suitable for my project?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                RPPS analyzes project requirements such as skills, experience, tools, domain knowledge,
+                                role, and project requirements, then calculates candidate–project compatibility to
+                                generate suitable recommendations.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                Can RPPS allocate the same employee to multiple projects at the same time?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                RPPS can consider resource availability, existing allocations, workload, and project
+                                requirements to help prevent conflicting assignments and excessive resource utilization.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                What happens if no candidate has all the skills required for my project?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                RPPS can identify candidates with partially matching skills and highlight skill gaps.
+                                These gaps can be used to support upskilling or training recommendations before or
+                                during project allocation. </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                Can I override an RPPS recommendation and manually select a candidate?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Yes. RPPS recommendations can be treated as decision-support information. An authorized
+                                project or resource manager can review the recommendation and make the final allocation
+                                decision according to organizational requirements. </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                How does RPPS handle confidential employee and project information?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                RPPS should use role-based access control, authentication, authorization, secure data
+                                storage, and appropriate data-protection practices so that users can access only the
+                                information required for their responsibilities. </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                What measurable business benefits can we expect from implementing RPPS?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                RPPS is designed to support better workforce utilization, reduce avoidable bench time,
+                                improve project–resource matching, identify skill gaps, support resource forecasting,
+                                and provide management with data-driven allocation insights. Actual business outcomes
+                                depend on data quality, adoption, organizational processes, and implementation.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                How can I know whether the recommended resource will actually perform well on my
+                                project?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                RPPS can combine skill compatibility with historical performance indicators such as
+                                execution accuracy, completion efficiency, performance yield, and previous project
+                                outcomes. These indicators should be treated as supporting evidence rather than
+                                guarantees of future performance.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                Can RPPS predict how many resources I will need for future projects?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Yes. The forecasting component can analyze historical project and workforce data to
+                                estimate future resource demand across daily, weekly, monthly, or yearly planning
+                                periods.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                What happens when project requirements change after resources have already been
+                                assigned?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                RPPS can recalculate compatibility and resource requirements when project skills, roles,
+                                timelines, workload, or other requirements change, allowing managers to review whether
+                                existing allocations remain appropriate.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-faq_form">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6 col-md-12">
+                        <img src="images/faq_image.png" alt="FAQ Image" class="img-fluid">
+                        <!-- Replace with your image -->
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <form action="/submit-faq/" method="POST">
+                            <!-- CSRF token if using Django --> <!-- {% csrf_token %} -->
+                            <div class="mb-3"> <label for="name" class="form-label"> Name </label> <input type="text"
+                                    class="form-control" id="name" name="name" placeholder="Your Name" required> </div>
+                            <div class="mb-3"> <label for="email" class="form-label"> Email </label> <input type="email"
+                                    class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3"> <label for="question" class="form-label"> Question </label>
+                                <textarea class="form-control" id="question" name="question" placeholder="Your Question"
+                                    rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"> Submit Question </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- ===================================== SECTION 1 - RPPS ====================================== -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">RPPS</h5>
+                    <p class="footer-description"> Resource Project Planning System for intelligent workforce
+                        utilization, resource allocation and project efficiency. </p>
+                    <div class="footer-social"> <a href="#" aria-label="LinkedIn"> <i class="bi bi-linkedin"></i> </a>
+                        <a href="#" aria-label="GitHub"> <i class="bi bi-github"></i> </a> <a href="#"
+                            aria-label="Twitter"> <i class="bi bi-twitter-x"></i> </a>
+                    </div>
+                </div>
+                <!-- ===================================== SECTION 2 - SERVICES ====================================== -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links">
+                        <li> <a href="#">Resource Allocation</a> </li>
+                        <li> <a href="#">Workforce Management</a> </li>
+                        <li> <a href="#">Project Assignment</a> </li>
+                        <li> <a href="#">Resource Utilization</a> </li>
+                        <li> <a href="#">Bench Management</a> </li>
+                        <li> <a href="#">Project Forecasting</a> </li>
+                    </ul>
+                </div>
+                <!-- ===================================== SECTION 3 - RESOURCES ====================================== -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-links">
+                        <li> <a href="#">About RPPS</a> </li>
+                        <li> <a href="#">Product</a> </li>
+                        <li> <a href="#">Pricing</a> </li>
+                        <li> <a href="#">Documentation</a> </li>
+                        <li> <a href="#">Research & Insights</a> </li>
+                        <li> <a href="#">FAQs</a> </li>
+                        <li> <a href="#">Contact Us</a> </li>
+                    </ul>
+                </div>
+                <!-- ===================================== SECTION 4 - CAREERS & LEGAL ====================================== -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li> <a href="#">Careers</a> </li>
+                        <li> <a href="#">Job Opportunities</a> </li>
+                        <li> <a href="#">Company Integration</a> </li>
+                        <li> <a href="#">Privacy Policy</a> </li>
+                        <li> <a href="#">Terms & Conditions</a> </li>
+                        <li> <a href="#">Cookie Policy</a> </li>
+                    </ul>
+                </div>
+            </div> <!-- ===================================== FOOTER BOTTOM ====================================== -->
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-copyright mb-0"> © 2026 RPPS - Resource Project Planning System. All rights
+                        reserved. </p>
+                </div>
+                <div class="col-md-6 text-md-end"> <a href="#" class="footer-bottom-link"> Sitemap </a> <span
+                        class="footer-separator">|</span> <a href="#" class="footer-bottom-link"> Accessibility </a>
+                    <span class="footer-separator">|</span> <a href="#" class="footer-bottom-link"> Contact </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- =========================================
+         BOOTSTRAP JAVASCRIPT
+    ========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+
+
+</body>
+
+</html>
