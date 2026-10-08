@@ -1,0 +1,442 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(135deg,
+            #f8fbff,
+            #eef5ff);
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+       LOADING SECTION
+    ===================================================== */
+
+.loading-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+
+/* =====================================================
+       LOADING CARD
+    ===================================================== */
+
+.loading-card {
+
+    width: 440px;
+
+    max-width: 100%;
+
+    padding: 45px 35px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(13, 110, 253, 0.08);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.10);
+
+    animation:
+        cardAppear 0.8s ease;
+
+}
+
+
+/* =====================================================
+       RPPS LOGO
+    ===================================================== */
+
+.rpps-logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(135deg,
+            #0d6efd,
+            #6610f2);
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 12px 30px rgba(13, 110, 253, 0.25);
+
+    animation:
+        logoPulse 2s infinite;
+
+}
+
+
+/* =====================================================
+       SPINNER
+    ===================================================== */
+
+.spinner-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.spinner-border {
+
+    width: 4.5rem;
+
+    height: 4.5rem;
+
+    border-width: 0.35rem;
+
+}
+
+
+/* =====================================================
+       TITLE
+    ===================================================== */
+
+.loading-title {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #212529;
+
+    margin-bottom: 10px;
+
+}
+
+
+.loading-message {
+
+    color: #6c757d;
+
+    min-height: 24px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =====================================================
+       PROGRESS
+    ===================================================== */
+
+.progress-container {
+
+    margin-top: 10px;
+
+}
+
+
+.progress {
+
+    height: 8px;
+
+    border-radius: 20px;
+
+    background:
+        #e9ecef;
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar {
+
+    width: 0%;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.4s ease;
+
+}
+
+
+.progress-value {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #6c757d;
+
+}
+
+
+/* =====================================================
+       LOADING ICONS
+    ===================================================== */
+
+.loading-icons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 32px;
+
+}
+
+
+.loading-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        #f1f5ff;
+
+    transition:
+        all 0.35s ease;
+
+}
+
+
+.loading-icon i {
+
+    font-size: 21px;
+
+    color: #0d6efd;
+
+    opacity: 0.35;
+
+    transition:
+        all 0.35s ease;
+
+}
+
+
+.loading-icon.active {
+
+    background:
+        #e7f1ff;
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 8px 18px rgba(13, 110, 253, 0.15);
+
+}
+
+
+.loading-icon.active i {
+
+    opacity: 1;
+
+    transform:
+        scale(1.2);
+
+}
+
+
+/* =====================================================
+       STATUS
+    ===================================================== */
+
+.status-text {
+
+    margin-top: 22px;
+
+    margin-bottom: 0;
+
+    font-size: 14px;
+
+    color: #6c757d;
+
+}
+
+
+/* =====================================================
+       FOOTER TEXT
+    ===================================================== */
+
+.loading-footer {
+
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid #eeeeee;
+
+    font-size: 12px;
+
+    color: #9aa0a6;
+
+}
+
+
+/* =====================================================
+       ANIMATIONS
+    ===================================================== */
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px) scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+
+    }
+
+}
+
+
+@keyframes logoPulse {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.07);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+       MOBILE
+    ===================================================== */
+
+@media (max-width: 576px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+    .loading-section {
+
+        padding: 20px;
+
+    }
+
+    .loading-card {
+
+        padding:
+            35px 22px;
+
+    }
+
+    .loading-title {
+
+        font-size: 22px;
+
+    }
+
+    .loading-icons {
+
+        gap: 16px;
+
+    }
+
+    .loading-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+}

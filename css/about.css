@@ -1,0 +1,659 @@
+/* =========================================
+           GLOBAL
+        ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #212529;
+
+    background-color: #ffffff;
+}
+
+
+/* =========================================
+           NAVBAR
+        ========================================= */
+
+.rpps-navbar {
+
+    min-height: 72px;
+
+    background-color: #007ac1;
+
+    background-image:
+        linear-gradient(rgba(0, 122, 193, 0.90),
+            rgba(0, 122, 193, 0.90)),
+        url("Images/header.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    padding: 0 25px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.rpps-logo {
+
+    color: #ffffff !important;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 1.1;
+}
+
+
+.logo-title {
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+
+.logo-subtitle {
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.8px;
+
+    white-space: nowrap;
+}
+
+
+/* Navbar links */
+
+.rpps-navbar .navbar-nav {
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.rpps-navbar .nav-link {
+
+    position: relative;
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    padding:
+        22px 13px !important;
+
+    transition:
+        background-color 0.3s ease;
+}
+
+
+.rpps-navbar .nav-link:hover {
+
+    background-color:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 6px;
+}
+
+
+.rpps-navbar .nav-link.active {
+
+    background-color:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 6px;
+}
+
+
+/* =========================================
+           PAGE HERO
+        ========================================= */
+
+.about-hero {
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: #007ac1;
+
+    background-image:
+        linear-gradient(rgba(0, 122, 193, 0.88),
+            rgba(0, 122, 193, 0.88)),
+        url("Images/header.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: #ffffff;
+}
+
+
+.about-hero-content {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.about-hero h1 {
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+
+.about-hero p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+           COMMON SECTION
+        ========================================= */
+
+.about-section {
+
+    padding: 75px 0;
+}
+
+
+.about-section-light {
+
+    background-color: #f8f9fa;
+}
+
+
+.section-title {
+
+    color: #007ac1;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.section-description {
+
+    color: #6c757d;
+
+    line-height: 1.7;
+
+    max-width: 750px;
+}
+
+
+/* =========================================
+           ABOUT INTRO
+        ========================================= */
+
+.about-intro-text {
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #495057;
+}
+
+
+.about-highlight {
+
+    border-left:
+        4px solid #007ac1;
+
+    padding-left: 20px;
+
+    margin-top: 25px;
+}
+
+
+.about-highlight strong {
+
+    color: #007ac1;
+}
+
+
+/* =========================================
+           PROBLEM CARDS
+        ========================================= */
+
+.problem-card {
+
+    height: 100%;
+
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border:
+        1px solid #e3e7eb;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.problem-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+.problem-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    background-color: #e9f6ff;
+
+    color: #007ac1;
+
+    font-size: 25px;
+}
+
+
+.problem-card h4 {
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+.problem-card p {
+
+    color: #6c757d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+           HOW RPPS WORKS
+        ========================================= */
+
+.workflow-step {
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 20px;
+}
+
+
+.workflow-number {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background-color: #007ac1;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+.workflow-step h4 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.workflow-step p {
+
+    color: #6c757d;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+           FEATURES
+        ========================================= */
+
+.feature-card {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    height: 100%;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    border:
+        1px solid #e3e7eb;
+}
+
+
+.feature-icon {
+
+    flex-shrink: 0;
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background-color: #e9f6ff;
+
+    color: #007ac1;
+
+    font-size: 21px;
+}
+
+
+.feature-card h5 {
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+}
+
+
+.feature-card p {
+
+    margin: 0;
+
+    color: #6c757d;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+           VISION
+        ========================================= */
+
+.vision-section {
+
+    background-color: #007ac1;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+
+.vision-section h2 {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+
+.vision-section p {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+           FOOTER
+        ========================================= */
+
+.site-footer {
+
+    background-color: #005f96;
+
+    color: #ffffff;
+
+    padding: 45px 0 20px;
+}
+
+
+.footer-title {
+
+    font-size: 18px;
+
+    margin-bottom: 18px;
+
+    font-weight: 600;
+}
+
+
+.footer-links {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+.footer-links li {
+
+    margin-bottom: 9px;
+}
+
+
+.footer-links a {
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.footer-links a:hover {
+
+    color: #ffffff;
+}
+
+
+.footer-bottom {
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================
+           MOBILE
+        ========================================= */
+
+@media (max-width: 991px) {
+
+    .rpps-navbar {
+
+        padding: 8px 15px;
+    }
+
+
+    .rpps-navbar .navbar-nav {
+
+        align-items: stretch;
+    }
+
+
+    .rpps-navbar .nav-link {
+
+        padding:
+            12px 15px !important;
+    }
+
+
+    .about-hero {
+
+        min-height: 350px;
+    }
+
+
+    .about-hero h1 {
+
+        font-size: 36px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .about-section {
+
+        padding: 50px 0;
+    }
+
+
+    .about-hero h1 {
+
+        font-size: 30px;
+    }
+
+
+    .about-hero p {
+
+        font-size: 15px;
+    }
+
+
+    .section-title {
+
+        font-size: 27px;
+    }
+
+}

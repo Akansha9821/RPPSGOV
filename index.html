@@ -14,418 +14,41 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
-
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
     <link rel="stylesheet" href="css/style.css">
-    <!-- Custom CSS -->
-    <!-- <style>
-
-        /* =========================================
-           GLOBAL
-        ========================================= */
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f9fa;
-        }
-
-
-        /* =========================================
-           NAVBAR
-        ========================================= */
-
-        .site-header {
-            width: 100%;
-            position: relative;
-            z-index: 1000;
-        }
-
-        .rpps-navbar {
-            min-height: 72px;
-
-            background-color: #007ac1;
-
-            background-image:
-                linear-gradient(
-                    rgba(0, 122, 193, 0.88),
-                    rgba(0, 122, 193, 0.88)
-                ),
-                url("Images/header.png");
-
-            background-size: cover;
-            background-position: center;
-
-            padding: 0 25px;
-
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-
-        /* =========================================
-           LOGO
-        ========================================= */
-
-        .rpps-logo {
-            display: flex;
-            align-items: center;
-
-            color: #ffffff !important;
-
-            font-size: 27px;
-            font-weight: 700;
-
-            letter-spacing: 1px;
-
-            text-decoration: none;
-
-            padding: 10px 0;
-        }
-
-        .rpps-logo:hover {
-            color: #eaf7ff !important;
-        }
-
-
-        /* =========================================
-           NAVIGATION LINKS
-        ========================================= */
-
-        .rpps-navbar .navbar-nav {
-            align-items: center;
-            gap: 5px;
-        }
-
-        .rpps-navbar .nav-link {
-            position: relative;
-
-            color: #ffffff !important;
-
-            font-size: 15px;
-            font-weight: 500;
-
-            padding: 22px 13px !important;
-
-            transition:
-                color 0.3s ease,
-                background-color 0.3s ease;
-        }
-
-
-        /* Hover background */
-
-        .rpps-navbar .nav-link:hover {
-            color: #ffffff !important;
-
-            background-color: rgba(255, 255, 255, 0.15);
-
-            border-radius: 6px;
-        }
-
-
-        /* Bottom hover line */
-
-        .rpps-navbar .nav-link::after {
-            content: "";
-
-            position: absolute;
-
-            left: 12px;
-            right: 12px;
-            bottom: 8px;
-
-            height: 2px;
-
-            background-color: #ffffff;
-
-            transform: scaleX(0);
-
-            transform-origin: center;
-
-            transition: transform 0.3s ease;
-        }
-
-        .rpps-navbar .nav-link:hover::after,
-        .rpps-navbar .nav-link.active::after {
-            transform: scaleX(1);
-        }
-
-
-        /* =========================================
-           SERVICES DROPDOWN
-        ========================================= */
-
-        .services-dropdown {
-            min-width: 270px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            padding: 8px;
-
-            margin-top: 5px;
-
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .services-dropdown .dropdown-item {
-            padding: 11px 14px;
-
-            border-radius: 6px;
-
-            font-size: 14px;
-
-            transition:
-                background-color 0.2s ease,
-                padding-left 0.2s ease;
-        }
-
-        .services-dropdown .dropdown-item:hover {
-            background-color: #e9f6ff;
-
-            color: #007ac1;
-
-            padding-left: 20px;
-        }
-
-        .services-dropdown .dropdown-item i {
-            width: 25px;
-
-            color: #007ac1;
-        }
-
-
-        /* =========================================
-           NOTIFICATION
-        ========================================= */
-
-        .notification-link {
-            position: relative;
-
-            display: flex !important;
-
-            align-items: center;
-
-            justify-content: center;
-        }
-
-        .notification-icon {
-            font-size: 20px;
-        }
-
-        .notification-badge {
-            position: absolute;
-
-            top: 12px;
-            right: 7px;
-
-            min-width: 17px;
-            height: 17px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background-color: #dc3545;
-
-            color: #ffffff;
-
-            font-size: 10px;
-            font-weight: 700;
-        }
-
-
-        /* =========================================
-           USER PROFILE
-        ========================================= */
-
-        .profile-link {
-            display: flex !important;
-
-            align-items: center;
-
-            gap: 8px;
-        }
-
-        .profile-image {
-            width: 36px;
-            height: 36px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border: 2px solid #ffffff;
-        }
-
-        .profile-name {
-            color: #ffffff;
-        }
-
-        .profile-dropdown {
-            min-width: 220px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            padding: 8px;
-
-            margin-top: 5px;
-
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .profile-dropdown .dropdown-item {
-            padding: 10px 13px;
-
-            border-radius: 6px;
-        }
-
-        .profile-dropdown .dropdown-item:hover {
-            background-color: #e9f6ff;
-
-            color: #007ac1;
-        }
-
-        .profile-dropdown .dropdown-item i {
-            width: 25px;
-        }
-
-        .profile-header {
-            padding: 12px;
-
-            border-bottom: 1px solid #eeeeee;
-
-            margin-bottom: 5px;
-        }
-
-        .profile-header img {
-            width: 45px;
-            height: 45px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-        }
-
-
-        /* =========================================
-           BANNER
-        ========================================= */
-
-        .site-banner {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .site-banner img {
-            display: block;
-
-            width: 100%;
-            height: auto;
-
-            min-height: 300px;
-
-            object-fit: cover;
-        }
-
-
-        /* =========================================
-           MAIN CONTENT
-        ========================================= */
-
-        .site-content {
-            min-height: 400px;
-
-            padding: 50px 30px;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        .site-footer {
-            min-height: 100px;
-
-            background-color: #007ac1;
-
-            color: #ffffff;
-
-            padding: 30px;
-        }
-
-
-        /* =========================================
-           MOBILE NAVBAR
-        ========================================= */
-
-        @media (max-width: 991px) {
-
-            .rpps-navbar {
-                padding: 8px 15px;
-            }
-
-            .rpps-navbar .navbar-nav {
-                align-items: stretch;
-
-                gap: 0;
-
-                padding-top: 10px;
-            }
-
-            .rpps-navbar .nav-link {
-                padding: 12px 15px !important;
-            }
-
-            .rpps-navbar .nav-link::after {
-                display: none;
-            }
-
-            .rpps-navbar .nav-link:hover {
-                border-radius: 5px;
-            }
-
-            .notification-link {
-                justify-content: flex-start;
-            }
-
-            .notification-badge {
-                position: static;
-
-                margin-left: 5px;
-            }
-
-            .profile-link {
-                justify-content: flex-start;
-            }
-
-            .services-dropdown,
-            .profile-dropdown {
-                box-shadow: none;
-
-                border-radius: 5px;
-
-                margin-top: 0;
-            }
-        }
-
-    </style> -->
+    <meta name="description"
+        content="RPPS is an AI-powered Resource Project Planning System that connects skilled candidates with suitable projects, optimizes workforce utilization, manages bench resources, and improves project efficiency.">
+    <meta name="keywords"
+        content="RPPS, Resource Project Planning System, resource planning, project planning, workforce management, resource allocation, employee utilization, bench management, AI recruitment, skill based project recommendation, project resource allocation, HRTech, workforce optimization, project forecasting">
+    <meta name="author" content="RPPS - Resource Project Planning">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://opa-factory.com/">
+    <!-- Theme / Browser -->
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RPPS | AI-Powered Resource & Project Planning System">
+    <meta property="og:description"
+        content="Intelligent workforce utilization and project resource planning through AI-powered skill matching, resource allocation, bench management, and project forecasting.">
+    <meta property="og:url" content="https://opa-factory.com/">
+    <meta property="og:site_name" content="RPPS">
+    <meta property="og:image" content="https://opa-factory.com/assets/images/rpps-og-image.png">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RPPS | AI-Powered Resource & Project Planning System">
+    <meta name="twitter:description"
+        content="AI-powered resource allocation, workforce utilization, project matching, bench management, and project forecasting.">
+    <meta name="twitter:image" content="https://opa-factory.com/assets/images/rpps-og-image.png">
+    <!-- Mobile / Application -->
+    <meta name="application-name" content="RPPS">
+    <meta name="apple-mobile-web-app-title" content="RPPS">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Language -->
+    <meta http-equiv="content-language" content="en">
 
 </head>
-
 
 <body>
 
@@ -863,7 +486,6 @@
                         <!-- =================================
                              USER PROFILE
                         ================================== -->
-
                         <li class="nav-item dropdown">
 
                             <a class="nav-link dropdown-toggle profile-link" href="#" role="button"
@@ -884,14 +506,9 @@
 
 
                             <!-- Profile Dropdown -->
-
                             <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
-
-
                                 <!-- Profile Header -->
-
                                 <li>
-
                                     <div class="profile-header d-flex align-items-center gap-3">
 
                                         <img src="Images/user-profile.jpg" alt="User Profile">
@@ -1036,7 +653,7 @@
 
         <section class="site-banner" id="site-banner">
 
-            <img src="images/Banner_Image.png" alt="RPPS Workforce Resource Planning Banner">
+            <img src="Images/Banner_Image.png" alt="RPPS Workforce Resource Planning Banner">
 
         </section>
         <!-- =====================================
@@ -1075,6 +692,88 @@
                         <p>Assign projects to the right team members based on their skills and availability.</p>
                     </div>
 
+                    <section id="document-showcase" class="paper-card" style="margin: 25px; padding: 25px;">
+                        <span class="section-badge">Recommended Resume Template</span>
+
+                        <h2 id="resume_template">Attached Resume Templates</h2>
+
+                        <p id="resume_template">
+                            This section showcases the initially attached resume templates. Upload these templates for better Project Recommendation into your  project under the Upload Resume Section same as used below.
+                        </p>
+
+                        <div class="row g-4">
+
+                            <div class="col-lg-4">
+                                <div class="document-card">
+                                    <div class="document-header doc-paper">
+                                        <i class="bi bi-file-earmark-pdf-fill" style="font-size: 52px;"></i>
+                                        <h4 class="mt-2">Basic Template</h4>
+                                    </div>
+
+                                    <div class="p-3">
+                                        <p>
+                                            A basic resume template with a clean and professional design.
+                                        </p>
+
+                                        <iframe class="pdf-preview" src="resume_templates/Akansha_Rana.pdf"></iframe>
+
+                                        <div class="d-grid gap-2 mt-3">
+                                            <a href="resume_templates/Akansha_Rana.pdf" target="_blank" class="btn btn-danger">
+                                                <i class="bi bi-box-arrow-up-right"></i> download template
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="document-card">
+                                    <div class="document-header doc-literature">
+                                        <i class="bi bi-journal-bookmark-fill" style="font-size: 52px;"></i>
+                                        <h4 class="mt-2">Premium Template</h4>
+                                    </div>
+
+                                    <div class="p-3">
+                                        <p>
+                                            A premium resume template with an elegant and modern design.
+                                        </p>
+
+                                        <iframe class="pdf-preview" src="resume_templates/Akansha_Rana.pdf"></iframe>
+
+                                        <div class="d-grid gap-2 mt-3">
+                                            <a href="resume_templates/Akansha_Rana.pdf" target="_blank" class="btn btn-primary">
+                                                <i class="bi bi-box-arrow-up-right"></i> download template
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="document-card">
+                                    <div class="document-header doc-report">
+                                        <i class="bi bi-file-earmark-richtext-fill" style="font-size: 52px;"></i>
+                                        <h4 class="mt-2">Other Templates</h4>
+                                    </div>
+
+                                    <div class="p-3">
+                                        <p>
+                                            Extra Business insight pre premimum resume template design.
+                                        </p>
+
+                                        <iframe class="pdf-preview" src="resume_templates/Akansha_Rana.pdf"></iframe>
+
+                                        <div class="d-grid gap-2 mt-3">
+                                            <a href="resume_templates/Akansha_Rana.pdf" target="_blank" class="btn btn-success">
+                                                <i class="bi bi-box-arrow-up-right"></i>  download template
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
                     <section class="rpps-recommendation-section py-5">
                         <div class="container"> <!-- Section Heading -->
                             <div class="row mb-4">
@@ -1099,9 +798,11 @@
                                                     Resume </label> <input type="file" class="form-control" id="resume"
                                                     name="resume" accept=".pdf,.doc,.docx" required>
                                                 <div class="form-text"> Supported formats: PDF, DOC, DOCX, Pages </div>
-                                            </div> <!-- Resume Upload Button --> <button type="submit" name="input_type"
-                                                value="resume" class="btn btn-primary rpps-submit-btn"> <i
-                                                    class="bi bi-upload me-2"></i> Upload & Find Projects </button>
+                                            </div> <!-- Resume Upload Button -->
+                                            <button type="submit" name="input_type" value="resume"
+                                                class="btn btn-primary rpps-submit-btn" id="upload_btn">Upload
+                                                & Find Projects </button>
+
                                         </div>
                                     </div>
                                     <!-- ========================================= COLUMN 2 - SKILL SEARCH ========================================== -->
@@ -1116,17 +817,23 @@
                                                     name="skills" placeholder="e.g. Python, Django, SQL, AWS"
                                                     autocomplete="off" required>
                                                 <div class="form-text"> Separate multiple skills with commas. </div>
-                                            </div> <!-- Search Button --> <button type="submit" name="input_type"
-                                                value="skills" class="btn btn-primary rpps-submit-btn"> <i
-                                                    class="bi bi-search me-2"></i> Find Recommended Projects </button>
+                                            </div> <!-- Search Button -->
+
+                                            <button type="submit" name="input_type" value="skills"
+                                                class="btn btn-primary rpps-submit-btn"
+                                                onclick="window.location.href='./spineer.html';"> <i
+                                                    class="bi bi-search me-2"></i>Find Recommended Projects </button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </section>
-
                 </div>
+        </section>
+        <section style="margin:25px; padding:30px;">
+            <div class="reccomandation" id="demo">
+            </div>
         </section>
 
         <section class="site-reccomandation" id="reccomanded-project">
@@ -1165,7 +872,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a href="#" class="btn btn-primary w-100">
+                                        <a href="./spineer.html" class="btn btn-primary w-100">
                                             Open Workspace
                                         </a>
                                     </div>
@@ -1202,7 +909,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a href="#" class="btn btn-primary w-100">
+                                        <a href="./spineer.html" class="btn btn-primary w-100">
                                             Open Workspace
                                         </a>
                                     </div>
@@ -1239,7 +946,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a href="#" class="btn btn-primary w-100">
+                                        <a href="./spineer.html" class="btn btn-primary w-100">
                                             Open Workspace
                                         </a>
                                     </div>
@@ -1276,7 +983,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a href="#" class="btn btn-primary w-100">
+                                        <a href="./spineer.html" class="btn btn-primary w-100">
                                             Open Workspace
                                         </a>
                                     </div>
@@ -1313,7 +1020,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a href="#" class="btn btn-primary w-100">
+                                        <a href="./spineer.html" class="btn btn-primary w-100">
                                             Open Workspace
                                         </a>
                                     </div>
@@ -1349,7 +1056,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a href="#" class="btn btn-primary w-100">
+                                        <a href="./spineer.html" class="btn btn-primary w-100">
                                             Open Workspace
                                         </a>
                                     </div>
@@ -1725,6 +1432,241 @@
     ========================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script>
+        const button = document.querySelector('#upload_btn');
+        const spanbox = document.getElementById('demo');
+
+        button.addEventListener('click', () => {
+
+            spanbox.innerHTML = `
+                    <div class="container">
+                        <div id="carouselExampleIndicators"
+                            class="carousel slide"
+                            data-bs-ride="carousel">
+                        <!-- Carousel Items -->
+                            <div class="carousel-inner">
+
+                            <!-- Slide 1 -->
+                                <div class="carousel-item active">
+
+                                    <div class="row g-4">
+
+                                    <!-- Card 1 -->
+                                        <div class="col-md-4">
+                                            <div class="card h-100">
+
+                                                <img src="https://via.placeholder.com/300x180"
+                                                    class="card-img-top"
+                                                    alt="Image 1">
+
+                                                    <div class="card-body">
+
+                                                        <h5 class="card-title">
+                                                            Card Title 1
+                                                        </h5>
+
+                                                        <p class="card-text">
+                                                            Some quick example text to build on
+                                                            the card title and make up the bulk
+                                                            of the card's content.
+                                                        </p>
+
+                                                        <a href="#" class="btn btn-primary">
+                                                            Go somewhere
+                                                        </a>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+
+
+                                    <!-- Card 2 -->
+                                        <div class="col-md-4">
+                                            <div class="card h-100">
+
+                                                <img src="https://via.placeholder.com/300x180"
+                                                    class="card-img-top"
+                                                    alt="Image 2">
+
+                                                    <div class="card-body">
+
+                                                        <h5 class="card-title">
+                                                            Card Title 2
+                                                        </h5>
+
+                                                        <p class="card-text">
+                                                            Some quick example text to build on
+                                                            the card title and make up the bulk
+                                                            of the card's content.
+                                                        </p>
+
+                                                        <a href="#" class="btn btn-primary">
+                                                            Go somewhere
+                                                        </a>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+
+
+                                    <!-- Card 3 -->
+                                        <div class="col-md-4">
+                                            <div class="card h-100">
+
+                                                <img src="https://via.placeholder.com/300x180"
+                                                    class="card-img-top"
+                                                    alt="Image 3">
+
+                                                    <div class="card-body">
+
+                                                        <h5 class="card-title">
+                                                            Card Title 3
+                                                        </h5>
+
+                                                        <p class="card-text">
+                                                            Some quick example text to build on
+                                                            the card title and make up the bulk
+                                                            of the card's content.
+                                                        </p>
+
+                                                        <a href="#" class="btn btn-primary">
+                                                            Go somewhere
+                                                        </a>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            <!-- Slide 2 -->
+                                <div class="carousel-item">
+
+                                    <div class="row g-4">
+
+                                    <!-- Card 4 -->
+                                        <div class="col-md-4">
+                                            <div class="card h-100">
+
+                                                <img src="https://via.placeholder.com/300x180"
+                                                    class="card-img-top"
+                                                    alt="Image 4">
+
+                                                    <div class="card-body">
+
+                                                        <h5 class="card-title">
+                                                            Card Title 4
+                                                        </h5>
+
+                                                        <p class="card-text">
+                                                            Another carousel card.
+                                                        </p>
+
+                                                        <a href="#" class="btn btn-primary">
+                                                            Go somewhere
+                                                        </a>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+
+
+                                    <!-- Card 5 -->
+                                        <div class="col-md-4">
+                                            <div class="card h-100">
+
+                                                <img src="https://via.placeholder.com/300x180"
+                                                    class="card-img-top"
+                                                    alt="Image 5">
+
+                                                    <div class="card-body">
+
+                                                        <h5 class="card-title">
+                                                            Card Title 5
+                                                        </h5>
+
+                                                        <p class="card-text">
+                                                            Another carousel card.
+                                                        </p>
+
+                                                        <a href="#" class="btn btn-primary">
+                                                            Go somewhere
+                                                        </a>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+
+
+                                    <!-- Card 6 -->
+                                        <div class="col-md-4">
+                                            <div class="card h-100">
+
+                                                <img src="https://via.placeholder.com/300x180"
+                                                    class="card-img-top"
+                                                    alt="Image 6">
+
+                                                    <div class="card-body">
+
+                                                        <h5 class="card-title">
+                                                            Card Title 6
+                                                        </h5>
+
+                                                        <p class="card-text">
+                                                            Another carousel card.
+                                                        </p>
+
+                                                        <a href="#" class="btn btn-primary">
+                                                            Go somewhere
+                                                        </a>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        <!-- Previous Button -->
+                            <button class="carousel-control-prev custom-carousel-btn"
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+
+                                <span class="carousel-control-prev-icon"></span>
+
+                                <span class="visually-hidden">
+                                    Previous
+                                </span>
+
+                            </button>
+
+
+                        <!-- Next Button -->
+                            <button class="carousel-control-next custom-carousel-btn"
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
+
+                                <span class="carousel-control-next-icon"></span>
+
+                                <span class="visually-hidden">
+                                    Next
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+    `;
+        });
     </script>
 
 

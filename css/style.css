@@ -823,11 +823,14 @@ body {
 .Heading1 {
     font-size: 40px;
     font-weight: 700;
-    color: #007ac1; /* Blue text */
+    color: #007ac1;
+    /* Blue text */
     margin-bottom: 8px;
     text-align: center;
-    color: #ffffff;;
+    color: #ffffff;
+    ;
 }
+
 .site-reccomandation {
     background-color: #007ac1;
     box-sizing: content-box;
@@ -836,6 +839,7 @@ body {
     padding: 50px 30px;
 
 }
+
 /* Recommended Projects */
 
 .project-card {
@@ -876,6 +880,7 @@ body {
 .project-card .btn {
     min-width: 160px;
 }
+
 .project-card {
     min-height: 430px;
     height: 100%;
@@ -945,4 +950,129 @@ body {
     border-radius: 8px;
     padding: 10px;
     font-weight: 600;
+}
+
+.custom-carousel-btn {
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--bs-primary);
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.custom-carousel-btn:hover {
+    background-color: #0056b3;
+}
+
+.carousel-control-prev {
+    left: -20px;
+}
+
+.carousel-control-next {
+    right: -20px;
+}
+
+.formula {
+    background: #f1f5f9;
+    border-left: 5px solid #0ea5e9;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+}
+
+.mini-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    height: 100%;
+}
+
+.section-badge {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.profile-box {
+    background: #eef6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.flow-box {
+    background: white;
+    border: 2px solid #dbeafe;
+    padding: 18px;
+    border-radius: 14px;
+    height: 100%;
+    text-align: center;
+}
+
+.document-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+}
+
+.document-header {
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.doc-paper {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+.doc-literature {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.doc-report {
+    background: linear-gradient(135deg, #16a34a, #166534);
+}
+
+.pdf-preview {
+    width: 100%;
+    height: 420px;
+    border: none;
+    background: #f8fafc;
+}
+
+#resume_template {
+    font-weight: 700;
+    border-left: 6px solid var(--primary);
+    padding: 25px;
+    margin: 25px;
+    color: #008cff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-control-prev {
+        left: 5px;
+    }
+
+    .carousel-control-next {
+        right: 5px;
+    }
+
+    .carousel-item .col-md-4 {
+        margin-bottom: 15px;
+    }
 }
